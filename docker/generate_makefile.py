@@ -166,7 +166,7 @@ def generate_makefile():
     fuzzers.append('coverage')
     for fuzzer in fuzzers:
         image_type = 'runner'
-        if 'coverage' in fuzzer:
+        if 'coverage' in fuzzer or 'standalone_buid' in fuzzer:
             image_type = 'builder'
         for benchmark in benchmarks:
             makefile += (f'build-{fuzzer}-{benchmark}: ' +
